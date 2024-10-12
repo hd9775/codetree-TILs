@@ -85,6 +85,10 @@ public class Main {
 			Rotate rotate = chooseMiddlePoint();
 			int tmpCount = rotate.treasureCount;
 			
+			if(tmpCount == 0) {
+				break;
+			}
+			
 			replaceTreasureMap(rotate);
 			
 			int tmp = 0;
@@ -227,12 +231,10 @@ public class Main {
 		int[][] tmpMap = copyMap();
 		
 		findTreasure(rotateMap(tmpMap, rotate.r, rotate.c, rotate.rot));
-		
-		
+
 		fillBlankMap(tmpMap);
 		
 		map = tmpMap;
-		
 	}
 	
 	// 새로운 유물 조각
